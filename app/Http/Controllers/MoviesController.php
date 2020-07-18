@@ -15,10 +15,10 @@ class MoviesController extends Controller
     public function index()
     {
         $popularMovies = Http::withToken(config('services.tmdb.token'))
-            ->get(config('services.tmdb.baseUrl') + "movie/popular")
-            ->json();
-        dd($popularMovies);
-        return view('index');
+            ->get(config('services.tmdb.base_url') . "/movie/popular")
+            ->json()['results'];
+
+        return view('index', compact('popularMovies'));
     }
 
     /**
