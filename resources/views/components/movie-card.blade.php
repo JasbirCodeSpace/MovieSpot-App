@@ -1,11 +1,11 @@
 <div class="mt-8">
-    <a href="#">
+    <a href="{{ route('movies.show' , $movie['id']) }}">
         <img src="{{ 'https://image.tmdb.org/t/p/w500'.$movie['poster_path'] }}"
             alt="parasite" class="hover:opacity-75 transition
                     ease-in-out">
     </a>
     <div class="mt-2">
-        <a href="#" class="text-lg mt-2 hover:text-gray:300">{{ $movie['title'] }}</a>
+        <a href="{{ route('movies.show' , $movie['id']) }}" class="text-lg mt-2 hover:text-gray:300">{{ $movie['title'] }}</a>
         <div class="flex items-center text-gray-400 text-sm mt-1">
             <svg class="fill-current text-orange-500 w-4" viewBox="0 0 24 24">
                 <g data-name="Layer 2">
