@@ -7,11 +7,13 @@
     <title>DramaSpot</title>
     <link href="/css/main.css" rel="stylesheet">
     <livewire:styles>
+    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
 </head>
 
 <body class="font-sans bg-gray-900 text-white">
     <nav class="border-b border-gray-800">
-        <div class="container mx-auto flex flex-col md:flex-row items-center justify-between px-4 py-6">
+        <div class="container 
+        mx-auto flex flex-col md:flex-row items-center justify-between px-4 py-6">
             <ul class="flex flex-col md:flex-row items-center">
                 <li>
                     <a href="{{ route('movies.index') }}">
