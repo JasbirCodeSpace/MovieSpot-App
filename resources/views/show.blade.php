@@ -60,16 +60,19 @@
                         </button>
                 
                 </div>     
+            <template x-if="isOpen">
             <div style="background-color: rgba(0, 0, 0, 0.5);"
                 class="fixed top-0 left-0 w-full h-full flex items-center shadow-lg 
                 overflow-y-auto"
-                x-show.transition.opacity="isOpen">
+                x-show.transition.opacity="isOpen"
+                >
                 <div class="container mx-auto lg:px-32 rounded-lg overflow-y-auto">
                     <div class="bg-gray-900 rounded">
                         <div class="flex justify-end pr-4 pt-2">
                             <button 
                             @click="isOpen=false"
-                            class="text-3xl leading-none hover:text-gray-300">&times;</button>
+                            @keydown.escape.window = "isOpen = false"
+                            class="text-3xl leading-none hover:text-gray-300 focus:outline-none">&times;</button>
                         </div>
                         <div class="modal-body px-8 py-8">
                             <div class="responsive-container overflow-hidden relative"
@@ -84,7 +87,8 @@
                     </div>
                 </div>
 
-            </div>                 
+            </div>       
+            </template>          
             @endif
     </div>
         </div>
@@ -131,15 +135,17 @@
                 @endif
                 @endforeach
             </div>
-                        <div style="background-color: rgba(0, 0, 0, 0.5);"
+            <div style="background-color: rgba(0, 0, 0, 0.5);"
                 class="fixed top-0 left-0 w-full h-full flex items-center shadow-lg 
                 overflow-y-auto"
+
                 x-show.transition.opacity="isOpen">
                 <div class="container mx-auto lg:px-32 rounded-lg overflow-y-auto">
                     <div class="bg-gray-900 rounded">
                         <div class="flex justify-end pr-4 pt-2">
                             <button 
                             @click="isOpen=false"
+                            @keydown.escape.window = "isOpen = false"
                             class="text-3xl leading-none hover:text-gray-300">&times;</button>
                         </div>
                         <div class="modal-body px-8 py-8">
