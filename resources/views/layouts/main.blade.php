@@ -29,7 +29,7 @@
                     <a href="#" class="hover:text-gray-600">Shows</a>
                 </li>
                 <li class="md:ml-6 mt-4 md:mt-0">
-                    <a href="#" class="hover:text-gray-600">Actors</a>
+                <a href="{{ route('actors.index') }}" class="hover:text-gray-600">Actors</a>
                 </li>
             </ul>
             <div class="flex flex-col md:flex-row items-center">
