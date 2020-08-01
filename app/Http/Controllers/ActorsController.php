@@ -16,10 +16,10 @@ class ActorsController extends Controller
     public function index($page = 1)
     {
         abort_if($page > 500, 204);
-        
+
         $popularActors = Http::withToken(config('services.tmdb.token'))
-                ->get(config('services.tmdb.base_url') . "/person/popular?page=".$page)
-                ->json()['results'];
+            ->get(config('services.tmdb.base_url') . "/person/popular?page=" . $page)
+            ->json()['results'];
 
         $viewModel = new ActorsViewModel($popularActors, $page);
         return view('actors.index', $viewModel);
@@ -54,7 +54,7 @@ class ActorsController extends Controller
      */
     public function show($id)
     {
-        //
+        return view('actors.show');
     }
 
     /**
