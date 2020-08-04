@@ -25,8 +25,8 @@ class MoviesController extends Controller
             ->get(config('services.tmdb.base_url') . "/movie/now_playing")
             ->json()['results'];
 
-        $popularMovies = array_slice($popularMovies, 0, 10);
-        $nowPlayingMovies = array_slice($nowPlayingMovies, 0, 10);
+        $popularMovies = array_slice($popularMovies, 0, 20);
+        $nowPlayingMovies = array_slice($nowPlayingMovies, 0, 20);
 
         $genres =
             Http::withToken(config('services.tmdb.token'))
@@ -39,7 +39,7 @@ class MoviesController extends Controller
             $nowPlayingMovies, 
             $genres
         );
-        // return view('index', compact('popularMovies', 'nowPlayingMovies','genres'));
+
         return view('movies.index', $viewModel);
     }
 

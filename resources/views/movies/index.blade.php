@@ -15,7 +15,7 @@
     </div>
     {{-- end of popular movies --}}
     {{-- start of now playing movies --}}
-    <div class="now-playing-movies">
+    <div class="now-playing-movies py-24">
         <h2 class="uppercase tracking-wider text-orange-500 text-lg font-semibold mt-4">
             Now Playing
         </h2>
