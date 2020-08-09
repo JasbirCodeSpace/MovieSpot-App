@@ -11,6 +11,9 @@
 </head>
 
 <body class="font-sans bg-gray-900 text-white">
+      @php
+          $page = Request::path();
+      @endphp
     <nav class="border-b border-gray-800">
         <div class="container 
         mx-auto flex flex-col md:flex-row items-center justify-between px-4 py-6">
@@ -33,7 +36,7 @@
                 </li>
             </ul>
             <div class="flex flex-col md:flex-row items-center">
-                <livewire:search-dropdown>
+                <livewire:search-dropdown :page="$page">
                 <div class="md:ml-4 mt-4 md:mt-0">
                     <a href="#">
                         <img src="/img/avatar.jpg" alt="avatar" class="rounded-full w-8 h-8">

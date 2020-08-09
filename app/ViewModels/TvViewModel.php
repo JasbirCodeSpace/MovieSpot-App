@@ -49,7 +49,7 @@ public $popularTv, $topRatedTv, $genres;
                 ])->only([
                     'poster_path', 'id', 'genre_ids', 'name', 'vote_average', 'overview', 'first_air_date', 'genres',
                 ]);
-            })->dump();
+            });
         
     }
 }
