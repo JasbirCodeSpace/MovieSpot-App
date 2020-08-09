@@ -68,8 +68,10 @@ class ActorViewModel extends ViewModel
                 'release_year'=>isset($releaseDate)?Carbon::parse($releaseDate)->format('Y'):'Future',
                 'title'=>$title,
                 'character'=>isset($movie['character'])?$movie['character']:'',
+                'link_to_page'=>$movie['media_type'] == 'movie'? route('movies.show', $movie['id'])
+                    : route('tv.show', $movie['id']),
             ]);
-        })->sortByDesc('release_date');
+        })->sortByDesc('release_date')->dump();
     }
 
     public function knownForMovies(){
