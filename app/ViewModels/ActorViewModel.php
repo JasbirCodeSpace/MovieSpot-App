@@ -71,7 +71,7 @@ class ActorViewModel extends ViewModel
                 'link_to_page'=>$movie['media_type'] == 'movie'? route('movies.show', $movie['id'])
                     : route('tv.show', $movie['id']),
             ]);
-        })->sortByDesc('release_date')->dump();
+        })->sortByDesc('release_date');
     }
 
     public function knownForMovies(){

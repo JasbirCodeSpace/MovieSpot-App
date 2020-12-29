@@ -1,1 +1,1 @@
-# DramaSpot-WebApp
+# MovieSpot-App
