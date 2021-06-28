@@ -44,7 +44,7 @@ public $popularTv, $topRatedTv, $genres;
             return collect($tvShow)->merge([
                 'poster_path' => 'https://image.tmdb.org/t/p/w500'.$tvShow['poster_path'],
                 'vote_average' => $tvShow['vote_average']*10 .'%',
-                'first_air_date' => Carbon::parse($tvShow['first_air_date'])->format('M d, Y'),
+                'first_air_date' => isset($tvShow['first_air_date']) ? Carbon::parse($tvShow['first_air_date'])->format('M d, Y') : '',
                 'genres' => $genresFormatted,
                 ])->only([
                     'poster_path', 'id', 'genre_ids', 'name', 'vote_average', 'overview', 'first_air_date', 'genres',

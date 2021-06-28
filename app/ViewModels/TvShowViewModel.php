@@ -19,7 +19,7 @@ class TvShowViewModel extends ViewModel
         return collect($this->tvShow)->merge([
         'poster_path' => 'https://image.tmdb.org/t/p/w500'.$this->tvShow['poster_path'],
         'vote_average' => $this->tvShow['vote_average']*10 .'%',
-        'first_air_date' => Carbon::parse($this->tvShow['first_air_date'])->format('M d, Y'),
+        'first_air_date' => isset($tvShow['first_air_date']) ? Carbon::parse($tvShow['first_air_date'])->format('M d, Y') : '',
         'genres' => collect($this->tvShow['genres'])->pluck('name')->flatten()->implode(', '),
         'crew' => collect($this->tvShow['credits']['crew'])->take(2),
         'cast' => collect($this->tvShow['credits']['cast'])->take(5)->map(function($cast){
